@@ -1,56 +1,35 @@
 package com.example;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
+import com.TCP.TCPSetup;
+import com.UDP.UDPSetup;
 
 /**
  * Hello world!
  */
 public final class App {
-    private App() {
+  private App() {
+  }
+
+  public static final int PORTNO = 9876;
+  public static void main(String[] args) {
+
+    boolean isServer = false;
+
+    System.out.println(args[0] + " " +args[1]);
+
+    if (args.length > 1 && args[1].equals("SERVER")) {
+      isServer = true;
     }
 
+    if (args.length > 0 && args[0].equals("TCP")) {
+      new TCPSetup(isServer, PORTNO);
+    }
+    else if (args.length > 0 && args[0].equals("UDP")) {
+      new UDPSetup(isServer, PORTNO);
+    }
 
-    public static void main(String[] args) {
-
-        
-
-        if (args.length>0){
-            System.out.println("args [" + args[0] + "]");
-            if (args[0].equals("SERVER")){
-                System.out.println("Server started");
-                Server server = new Server(9876);
-                boolean running = true;
-                while (running){
-                    server.awaitConnection();
-                    System.out.println("Server detected lient connected");
-                    running=false;
-                    String message = server.getMessage();
-                    server.close();
-                    System.out.println("Server received message : " + message);
-                }
-            }
-            else {
-                
-                System.out.println("Client started");
-                try {
-                    InetAddress host = InetAddress.getLocalHost();
-                    Client client = new Client(host.getHostName(), 9876);
-                    System.out.println("Client connected");
-                    client.sendMessage("Hello Andy");
-
-                    System.out.println("MEssage sent");
     
-                    client.close();
-                    System.out.println("Client closed");
-                } catch (UnknownHostException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-                
 
-
-            }
-        }
-    }
+    
+  }
 }

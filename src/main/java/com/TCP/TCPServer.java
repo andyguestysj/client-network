@@ -1,4 +1,4 @@
-package com.example;
+package com.TCP;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -6,12 +6,12 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class Server {
+public class TCPServer {
 
   ServerSocket serverSocket;
   Socket clientSocket;
 
-  Server(int portNo){
+  TCPServer(int portNo){
 
     try {
       serverSocket = new ServerSocket(portNo);

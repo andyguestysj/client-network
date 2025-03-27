@@ -26,6 +26,7 @@ public class Client {
   }
 
   public void sendMessage(String message){
+    System.out.println("sending msg");
     try (OutputStream out = toServer.getOutputStream()){
       out.write(message.getBytes());      
       out.flush();

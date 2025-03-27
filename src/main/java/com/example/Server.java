@@ -41,6 +41,7 @@ public class Server {
   public String getMessage(){
     String message="";
     try {
+      System.out.println("waiting msg");
       InputStream in = clientSocket.getInputStream();
       byte[] content = in.readAllBytes();
       message = new String(content);

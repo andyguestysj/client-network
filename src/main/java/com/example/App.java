@@ -2,6 +2,7 @@ package com.example;
 
 import com.TCP.TCPSetup;
 import com.UDP.UDPSetup;
+import com.Streamer.StreamerSetup;
 
 /**
  * Hello world!
@@ -26,6 +27,9 @@ public final class App {
     }
     else if (args.length > 0 && args[0].equals("UDP")) {
       new UDPSetup(isServer, PORTNO);
+    }
+    else if (args.length > 0 && args[0].equals("STREAMER")) {
+      new StreamerSetup(isServer, PORTNO);
     }
 
     

@@ -13,7 +13,7 @@ public class TCPSetup {
       boolean running = true;
       while (running) {
         server.awaitConnection();
-        System.out.println("Server detected lient connected");
+        System.out.println("Server detected client connected");
         running = false;
         String message = server.getMessage();
         server.close();

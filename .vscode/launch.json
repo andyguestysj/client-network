@@ -23,6 +23,38 @@
     },
     {
       "type": "java",
+      "name": "TCPServer",
+      "request": "launch",
+      "mainClass": "com.example.App",
+      "projectName": "my-app",
+      "args": ["TCP","SERVER"]
+    },
+    {
+      "type": "java",
+      "name": "TCPClient",
+      "request": "launch",
+      "mainClass": "com.example.App",
+      "projectName": "my-app",
+      "args": ["TCP","CLIENT"]
+    },
+    {
+      "type": "java",
+      "name": "UDPServer",
+      "request": "launch",
+      "mainClass": "com.example.App",
+      "projectName": "my-app",
+      "args": ["UDP","SERVER"]
+    },
+    {
+      "type": "java",
+      "name": "UDPClient",
+      "request": "launch",
+      "mainClass": "com.example.App",
+      "projectName": "my-app",
+      "args": ["UDP","CLIENT"]
+    },
+    {
+      "type": "java",
       "name": "Launch with Arguments Prompt",
       "request": "launch",
       "mainClass": "",
